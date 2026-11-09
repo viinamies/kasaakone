@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Windows 11 -tietokoneen kokoaja</title>
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--ink:#172033;--muted:#647087;--line:#dce3ee;--blue:#2563eb;--blue2:#1d4ed8;--green:#15803d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:linear-gradient(120deg,#14264b,#2458a6);color:white;padding:38px 20px}
+.hero,.layout{max-width:1180px;margin:auto}.hero h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:0 0 12px}.hero p{margin:0;color:#dbeafe;max-width:720px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;padding:26px 18px 50px}
+section.category,.summary{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 4px 16px #1c35520a}
+.category h2{font-size:20px;margin:0}.intro{color:var(--muted);font-size:14px;margin:4px 0 16px}
+.parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:12px}
+.part{border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:7px;min-height:154px}
+.part h3{font-size:16px;margin:0}.part p{font-size:13px;color:var(--muted);margin:0;flex:1}
+.price{font-weight:700;font-size:14px}
+button{font:inherit;cursor:pointer;border:0;border-radius:9px;padding:9px 12px;font-weight:650}
+.choose{background:#e8efff;color:#1d4ed8}.choose:hover{background:#d7e4ff}.choose:disabled{background:#dcfce7;color:#166534;cursor:default}
+.summary{position:sticky;top:16px;height:max-content}.summary h2{margin:0 0 6px;font-size:21px}.hint{color:var(--muted);font-size:13px;margin:0 0 16px}
+#selection{list-style:none;margin:0;padding:0}.selection-item{padding:10px 0;border-top:1px solid var(--line);font-size:14px}.selection-item strong{display:block}.selection-item span{color:var(--muted);font-size:12px}.remove{float:right;background:#f1f5f9;color:#475569;padding:5px 8px;font-size:12px}
+.total{border-top:2px solid var(--line);margin-top:12px;padding-top:12px;display:flex;justify-content:space-between;font-weight:750}
+.actions{display:grid;gap:9px;margin-top:16px}.primary{background:var(--blue);color:white}.primary:hover{background:var(--blue2)}.secondary{background:#eef2f7;color:#263449}
+.status{font-size:12px;color:var(--muted);margin-top:10px;min-height:18px}
+footer{max-width:1180px;margin:0 auto;padding:0 18px 28px;color:var(--muted);font-size:12px}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.summary{position:static;grid-row:1}}
+</style>
+</head>
+<body>
+<header><div class="hero"><h1>Windows 11 -tietokoneen kokoaja</h1><p>Valitse jokaiseen osioon yksi yhteensopiva osa. Valintasi näkyvät oikealla, ja voit ladata niistä PDF-yhteenvedon.</p></div></header>
+<main class="layout">
+<div id="catalog">
+<section class="category" data-category="Prosessori"><h2>1. Prosessori (CPU)</h2><p class="intro">Tietokoneen laskentatehosta vastaava osa.</p><div class="parts">
+<article class="part" data-name="AMD Ryzen 5 7600" data-price="189"><h3>AMD Ryzen 5 7600</h3><p>6 ydintä / 12 säiettä • AM5 • hyvä yleiskäyttöön ja pelaamiseen</p><div class="price">189 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="AMD Ryzen 7 7800X3D" data-price="359"><h3>AMD Ryzen 7 7800X3D</h3><p>8 ydintä / 16 säiettä • AM5 • tehokas peliprosessori</p><div class="price">359 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="Intel Core i5-14600K" data-price="279"><h3>Intel Core i5-14600K</h3><p>14 ydintä • LGA1700 • monipuoliseen käyttöön</p><div class="price">279 €</div><button class="choose">Valitse osa</button></article>
+</div></section>
+<section class="category" data-category="Emolevy"><h2>2. Emolevy</h2><p class="intro">Valitse prosessorin kantaan sopiva emolevy.</p><div class="parts">
+<article class="part" data-name="MSI B650 Tomahawk WiFi" data-price="209"><h3>MSI B650 Tomahawk WiFi</h3><p>AM5 • DDR5 • ATX • Wi-Fi</p><div class="price">209 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="ASUS TUF Gaming B650-Plus" data-price="179"><h3>ASUS TUF Gaming B650-Plus</h3><p>AM5 • DDR5 • ATX</p><div class="price">179 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="MSI PRO Z790-A WiFi" data-price="239"><h3>MSI PRO Z790-A WiFi</h3><p>LGA1700 • DDR5 • ATX • Wi-Fi</p><div class="price">239 €</div><button class="choose">Valitse osa</button></article>
+</div></section>
+<section class="category" data-category="Keskusmuisti"><h2>3. Keskusmuisti (RAM)</h2><p class="intro">Windows 11 -koneeseen suositellaan vähintään 16 Gt muistia.</p><div class="parts">
+<article class="part" data-name="Kingston Fury Beast 16 Gt DDR5" data-price="59"><h3>Kingston Fury Beast 16 Gt</h3><p>2 × 8 Gt • DDR5 • 5600 MT/s</p><div class="price">59 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="Corsair Vengeance 32 Gt DDR5" data-price="109"><h3>Corsair Vengeance 32 Gt</h3><p>2 × 16 Gt • DDR5 • 6000 MT/s</p><div class="price">109 €</div><button class="choose">Valitse osa</button></article>
+</div></section>
+<section class="category" data-category="Näytönohjain"><h2>4. Näytönohjain (GPU)</h2><p class="intro">Erityisen tärkeä pelaamisessa ja 3D-grafiikassa.</p><div class="parts">
+<article class="part" data-name="NVIDIA GeForce RTX 4060 8 Gt" data-price="319"><h3>NVIDIA GeForce RTX 4060</h3><p>8 Gt • energiatehokas 1080p-pelaamiseen</p><div class="price">319 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="NVIDIA GeForce RTX 4070 SUPER 12 Gt" data-price="649"><h3>NVIDIA GeForce RTX 4070 SUPER</h3><p>12 Gt • tehokas 1440p-pelaamiseen</p><div class="price">649 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="AMD Radeon RX 7800 XT 16 Gt" data-price="529"><h3>AMD Radeon RX 7800 XT</h3><p>16 Gt • vahva 1440p-vaihtoehto</p><div class="price">529 €</div><button class="choose">Valitse osa</button></article>
+</div></section>
+<section class="category" data-category="Tallennustila"><h2>5. Tallennustila</h2><p class="intro">SSD-levylle asennetaan Windows ja ohjelmat.</p><div class="parts">
+<article class="part" data-name="Samsung 990 EVO 1 Tt NVMe SSD" data-price="89"><h3>Samsung 990 EVO 1 Tt</h3><p>NVMe M.2 SSD • nopea käyttöjärjestelmälevy</p><div class="price">89 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="WD Black SN850X 2 Tt NVMe SSD" data-price="159"><h3>WD Black SN850X 2 Tt</h3><p>NVMe M.2 SSD • runsaasti nopeaa tallennustilaa</p><div class="price">159 €</div><button class="choose">Valitse osa</button></article>
+</div></section>
+<section class="category" data-category="Virtalähde"><h2>6. Virtalähde (PSU)</h2><p class="intro">Virtalähteen tehon pitää riittää kaikille komponenteille.</p><div class="parts">
+<article class="part" data-name="Corsair RM650e 650 W 80+ Gold" data-price="99"><h3>Corsair RM650e 650 W</h3><p>80+ Gold • modulaarinen • yleiseen pelikoneeseen</p><div class="price">99 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="be quiet! Pure Power 12 M 850 W" data-price="139"><h3>be quiet! Pure Power 12 M 850 W</h3><p>80+ Gold • modulaarinen • tehokkaammalle kokoonpanolle</p><div class="price">139 €</div><button class="choose">Valitse osa</button></article>
+</div></section>
+<section class="category" data-category="Kotelo"><h2>7. Kotelo</h2><p class="intro">Tarkista emolevyn koko ja näytönohjaimen mahtuminen koteloon.</p><div class="parts">
+<article class="part" data-name="Fractal Design Pop Air" data-price="89"><h3>Fractal Design Pop Air</h3><p>ATX-miditorni • hyvä ilmanvaihto</p><div class="price">89 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="NZXT H5 Flow" data-price="99"><h3>NZXT H5 Flow</h3><p>ATX-miditorni • ilmankiertoon suunniteltu</p><div class="price">99 €</div><button class="choose">Valitse osa</button></article>
+</div></section>
+<section class="category" data-category="Jäähdytys"><h2>8. Prosessorijäähdytys</h2><p class="intro">Huolehdi prosessorin lämpötiloista. Tarkista yhteensopivuus prosessorin kanssa.</p><div class="parts">
+<article class="part" data-name="Thermalright Peerless Assassin 120 SE" data-price="39"><h3>Thermalright Peerless Assassin 120 SE</h3><p>Kaksitorninen ilmajäähdytin</p><div class="price">39 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="Arctic Liquid Freezer III 240" data-price="89"><h3>Arctic Liquid Freezer III 240</h3><p>240 mm nestejäähdytys</p><div class="price">89 €</div><button class="choose">Valitse osa</button></article>
+</div></section>
+<section class="category" data-category="Käyttöjärjestelmä"><h2>9. Käyttöjärjestelmä</h2><p class="intro">Windows 11 -lisenssi ei sisälly muihin komponentteihin.</p><div class="parts">
+<article class="part" data-name="Windows 11 Home" data-price="145"><h3>Windows 11 Home</h3><p>Kotikäyttöön ja pelaamiseen</p><div class="price">145 €</div><button class="choose">Valitse osa</button></article>
+<article class="part" data-name="Windows 11 Pro" data-price="219"><h3>Windows 11 Pro</h3><p>Lisäominaisuuksia esimerkiksi yritys- ja etähallintakäyttöön</p><div class="price">219 €</div><button class="choose">Valitse osa</button></article>
+</div></section>
+</div>
+<aside class="summary">
+<h2>Omat valinnat</h2><p class="hint">Voit valita kustakin osiosta vain yhden osan. Valintaa voi vaihtaa tai poistaa.</p>
+<ul id="selection"><li class="selection-item" id="empty">Et ole vielä valinnut osia.</li></ul>
+<div class="total"><span>Yhteensä (arvio)</span><span id="total">0 €</span></div>
+<div class="actions"><button class="primary" id="pdf">Lataa valinnoista PDF</button><button class="secondary" id="clear">Tyhjennä kaikki valinnat</button></div>
+<p class="status" id="status" aria-live="polite"></p>
+</aside>
+</main>
+<footer>Huomio: hinnat ovat esimerkkihintoja, eivät reaaliaikaisia tarjouksia. Komponenttien yhteensopivuus (kanta, muisti, kotelo, jäähdytys ja virtalähteen teho) tulee tarkistaa ennen ostamista.</footer>
+<script>
+const selected = new Map();
+const euro = n => new Intl.NumberFormat('fi-FI',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+function render(){
+ const list=document.getElementById('selection'); list.innerHTML='';
+ if(!selected.size){list.innerHTML='<li class="selection-item" id="empty">Et ole vielä valinnut osia.</li>';}
+ let total=0;
+ document.querySelectorAll('.category').forEach(cat=>{
+   const name=cat.dataset.category, chosen=selected.get(name);
+   cat.querySelectorAll('.part').forEach(card=>{
+     const btn=card.querySelector('button');
+     const active=chosen && chosen.name===card.dataset.name;
+     btn.disabled=!!active; btn.textContent=active?'Valittu ✓':'Valitse osa';
+     card.style.borderColor=active?'#86c99b':'';
+     card.style.background=active?'#f3fcf5':'';
+   });
+   if(chosen){
+     total+=chosen.price;
+     const li=document.createElement('li');li.className='selection-item';
+     const strong=document.createElement('strong');strong.textContent=name;
+     const span=document.createElement('span');span.textContent=chosen.name+' • '+euro(chosen.price);
+     const remove=document.createElement('button');remove.className='remove';remove.textContent='Poista';remove.onclick=()=>{selected.delete(name);render();};
+     li.append(remove,strong,span);list.append(li);
+   }
+ });
+ document.getElementById('total').textContent=euro(total);
+}
+document.querySelectorAll('.category').forEach(cat=>{
+ cat.querySelectorAll('.part button').forEach(btn=>btn.addEventListener('click',()=>{
+   const card=btn.closest('.part');
+   selected.set(cat.dataset.category,{name:card.dataset.name,price:Number(card.dataset.price)});
+   render();
+ }));
+});
+document.getElementById('clear').onclick=()=>{selected.clear();render();document.getElementById('status').textContent='Valinnat tyhjennetty.';};
+function pdfEscape(s){return s.replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)');}
+function winAnsi(s){
+ const map={'€':0x80,'ä':0xe4,'ö':0xf6,'Ä':0xc4,'Ö':0xd6,'å':0xe5,'Å':0xc5,'–':0x96,'•':0x95,'✓':0xFC};
+ return Array.from(s).map(c=>String.fromCharCode(map[c]??(c.codePointAt(0)<=255?c.codePointAt(0):63))).join('');
+}
+function makePdf(lines){
+ const enc=s=>winAnsi(s);
+ let stream='BT\n/F1 18 Tf\n50 790 Td\n('+pdfEscape(enc('Windows 11 -tietokoneen osavalinnat'))+') Tj\n/F1 11 Tf\n0 -30 Td\n';
+ lines.forEach(line=>{stream+='('+pdfEscape(enc(line))+') Tj\n0 -19 Td\n';});
+ stream+='ET';
+ const objects=[
+ '<< /Type /Catalog /Pages 2 0 R >>',
+ '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
+ '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>',
+ '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>',
+ `<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`
+ ];
+ let pdf='%PDF-1.4\n', offsets=[0];
+ objects.forEach((obj,i)=>{offsets.push(pdf.length);pdf+=(i+1)+' 0 obj\n'+obj+'\nendobj\n';});
+ const xref=pdf.length;pdf+='xref\n0 '+(objects.length+1)+'\n0000000000 65535 f \n';
+ offsets.slice(1).forEach(o=>pdf+=String(o).padStart(10,'0')+' 00000 n \n');
+ pdf+='trailer\n<< /Size '+(objects.length+1)+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF';
+ return new Blob([new Uint8Array([ ...Array.from(pdf).map(c=>c.charCodeAt(0)&255) ])],{type:'application/pdf'});
+}
+document.getElementById('pdf').onclick=()=>{
+ const status=document.getElementById('status');
+ if(!selected.size){status.textContent='Valitse ensin vähintään yksi komponentti.';return;}
+ const lines=['Luotu: '+new Date().toLocaleDateString('fi-FI'),'','Valitut komponentit:'];
+ let total=0;
+ selected.forEach((v,k)=>{lines.push(k+': '+v.name+' - '+euro(v.price));total+=v.price;});
+ lines.push('','Arvioitu yhteishinta: '+euro(total),'','Hinnat ovat sivun esimerkkihintoja. Tarkista yhteensopivuus ennen ostamista.');
+ const blob=makePdf(lines),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='windows-11-osavalinnat.pdf';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+ status.textContent='PDF-tiedosto luotu ja lataus aloitettu.';
+};
+render();
+</script>
+</body>
+</html>
